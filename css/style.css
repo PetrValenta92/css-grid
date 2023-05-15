@@ -1,6 +1,13 @@
 .grid {
   display: grid;
-  grid-template: 100px 100px 100px / 200px 200px 200px;
+  grid-template-columns: 200px 200px 200px;
+  grid-template-rows: 100px 100px 100px;
+
+  /* SHORTHAND 
+  grid-template: row / column;
+  grid-template: 100px 100px 100px / 200px 200px 200px; 
+  */
+
 }
 
 .grid-item {
@@ -11,9 +18,38 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.green {
+  background-color: green;
   
+  grid-column-start: 2;
+  grid-column-end: 4;
+
+   /* SHORTHAND 
+  grid-column: start / end;
+  grid-column: 2 / 4; 
+  */
+
+  grid-row-start: 1;
+  grid-row-end: 3;
+
+   /* SHORTHAND 
+  grid-row: start / end;
+  grid-row: 1 / 3; 
+  */
+}
+
+/* GRID ITEMS CAN OVERLAP EACH OTHER IF IT'S EXPLICITELY TOLD*/
+
+.one {
+  grid-column: 1 / 4;
+  grid-row: 1 / 3;
 }
 
 .two {
-    background: #FF5670;
+  background: #FF5670;
+  grid-column: 2 / 4;
+  grid-row: 2 / 3;
 }
+
