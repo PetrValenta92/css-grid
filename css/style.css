@@ -53,3 +53,28 @@
   grid-row: 2 / span 2;
 }
 
+/* GRID == FLEX? */
+
+.grid-flex {
+  display: grid;
+  grid-template-columns: 150px 150px 200px;
+
+  /* justify-items: center; */
+  /* align-items: center; */
+}
+
+.big {
+  padding: 3rem 2rem;
+  background-color: #FF5670;
+}
+
+.start {
+  align-self: start;
+  justify-self: start;
+}
+
+.end {
+  align-self: end;
+  justify-self: end;
+}
+
