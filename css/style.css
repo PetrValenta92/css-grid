@@ -88,3 +88,26 @@
   justify-self: end;
 }
 
+/* EXPLICITE X IMPLICITE */
+
+.grid-expl-impl {
+  display: grid;
+  /* this is explicite*/
+  grid-template-rows: 50px 100px 200px;
+  grid-template-columns: 300px 500px;
+
+  /* 
+  implicite rows and columns are default to auto,
+  values of auto can be set for rows and columns
+  */
+  grid-auto-rows: 500px;
+  grid-auto-columns: 150px;
+
+}
+
+.implicite {
+  background-color: lightblue;
+  padding: 3rem 2rem;
+  grid-column: 4/5; /* this is implicite*/
+  
+}
