@@ -1,4 +1,6 @@
 .grid {
+  /* !Only allowed shape of grid is rectangle! */
+
   display: grid;
   grid-template-columns: 200px 200px 200px;
   grid-template-rows: 100px 100px 100px;
@@ -100,7 +102,7 @@
   implicite rows and columns are default to auto,
   values of auto can be set for rows and columns
   */
-  grid-auto-rows: 500px;
+  /* grid-auto-rows: 500px; */
   grid-auto-columns: 150px;
 
 }
@@ -110,4 +112,33 @@
   padding: 3rem 2rem;
   grid-column: 4/5; /* this is implicite*/
   
+}
+
+/* GRID AREAS */
+
+.grid-area {
+  display: grid;
+  grid-template-columns: 150px 150px 200px;
+  grid-template-areas: 
+    "header header header" 
+    "sidebar content content" 
+    "sidebar footer footer";
+}
+
+.header {
+  grid-area: header;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.content {
+  padding: 3rem 2rem;
+  background-color: lightsalmon;
+  grid-area: content;
+}
+
+.footer {
+  grid-area: footer;
 }
