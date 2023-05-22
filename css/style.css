@@ -116,13 +116,27 @@
 
 /* GRID AREAS */
 
+/* (.) dot == ignore the cell */
+
 .grid-area {
   display: grid;
-  grid-template-columns: 150px 150px 200px;
+  grid-template-columns: 5em auto 5em;
   grid-template-areas: 
-    "header header header" 
-    "sidebar content content" 
-    "sidebar footer footer";
+    "header header header"
+    "...... sidebar ......" 
+    "...... content ....." 
+    "footer footer footer"
+}
+
+@media (width > 600px) {
+  .grid-area {
+    grid-template-columns: 150px 350px 100px;
+    grid-template-areas: 
+      "sidebar header header"
+      "sidebar content ....."
+      "sidebar content ....."
+      "sidebar footer footer";
+  }
 }
 
 .header {
