@@ -1,5 +1,5 @@
 .grid {
-  /* !Only allowed shape of grid is rectangle! */
+  /* !Only allowed shape of grid is rectangle */
 
   /* fr unit
   used to distribute a fraction of the available space,
@@ -14,7 +14,7 @@
   If min is biger than max, grid will ignore it and use it as max value
   */
 
-  /* !fr units can't be used as the min size for minmax()! */
+  /* !fr units can't be used as the min size for minmax() */
 
   display: grid;
   /* grid-template-columns: 200px 200px 200px; */
@@ -26,7 +26,7 @@
   grid-template: 100px 100px 100px / 200px 200px 200px; 
   */
 
-  /* !Gaps are added only inside of the grid! */
+  /* !Gaps are added only inside of the grid */
 
   grid-column-gap: 2rem;
   grid-row-gap: 1rem;
@@ -67,7 +67,7 @@
   */
 }
 
-/* !Grid items can overlap each other if it's explicitely told! */
+/* !Grid items can overlap each other if it's explicitely told */
 
 .one {
   grid-column: 1 / 4; /* grid-column: 1 / span 3; */
@@ -170,12 +170,19 @@
   grid-area: footer;
 }
 
-/* GRID (ANOTHER) FUNCTIONS */
+/* GRID (ANOTHER) FEATURES */
 
 .grid-functions {
   display: grid;
   /* repeat() is used when we have multiple columns that are the same width*/
   grid-template-columns: repeat(3, 1fr);
+
+  /* auto-fill - will keep adding in new columns, even if they are empty */
+  /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+
+  /* auto-fit - will fit the columns you have defined into the available space (simplified!) */
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+
   gap: 1em;
   margin-bottom: 2em;
 }
