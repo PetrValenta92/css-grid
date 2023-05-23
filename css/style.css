@@ -7,7 +7,7 @@
   item and behaves much like a flex item does when it's 
   set to flex: 1 1 auto 
   */
-  
+
   /* minmax()
   Setting a min-width and max-width to template columns and rows
   minmax(100px , 300px) / minmax(3em, 10em) / minmax(200px, 50%) / ... 
@@ -35,11 +35,10 @@
   grid-gap: row / column;
   grid-gap: 1rem / 2rem;
   */
-
 }
 
 .grid-item {
-  background: #B823C1;
+  background: #b823c1;
   color: white;
   padding: 1em 2em;
   border: 2px solid purple;
@@ -50,11 +49,11 @@
 
 .green {
   background-color: green;
-  
+
   grid-column-start: 2;
   grid-column-end: 4;
 
-   /* SHORTHAND 
+  /* SHORTHAND 
   grid-column: start / end;
   grid-column: 2 / 4; 
   */
@@ -62,28 +61,24 @@
   grid-row-start: 1;
   grid-row-end: 3;
 
-   /* SHORTHAND 
+  /* SHORTHAND 
   grid-row: start / end;
   grid-row: 1 / 3; 
   */
 }
 
-
-
 /* !Grid items can overlap each other if it's explicitely told! */
 
 .one {
-  grid-column: 1 / 4;   /* grid-column: 1 / span 3; */
+  grid-column: 1 / 4; /* grid-column: 1 / span 3; */
   grid-row: 1 / 3;
 }
 
 .two {
-  background: #FF5670;
+  background: #ff5670;
   grid-column: 2 / span 2;
   grid-row: 2 / span 2;
 }
-
-
 
 /* GRID == FLEX? */
 
@@ -97,7 +92,7 @@
 
 .big {
   padding: 3rem 2rem;
-  background-color: #FF5670;
+  background-color: #ff5670;
 }
 
 .start {
@@ -109,8 +104,6 @@
   align-self: end;
   justify-self: end;
 }
-
-
 
 /* EXPLICITE X IMPLICITE */
 
@@ -127,7 +120,6 @@
 
   /* grid-auto-rows: 500px; */
   grid-auto-columns: 150px;
-
 }
 
 .implicite {
@@ -136,8 +128,6 @@
   grid-column: 4/5; /* this is implicite*/
 }
 
-
-
 /* GRID AREAS */
 
 /* (.) dot == ignore the cell */
@@ -145,17 +135,17 @@
 .grid-area {
   display: grid;
   grid-template-columns: 5em auto 5em;
-  grid-template-areas: 
+  grid-template-areas:
     "header header header"
-    "...... sidebar ......" 
-    "...... content ....." 
-    "footer footer footer"
+    "...... sidebar ......"
+    "...... content ....."
+    "footer footer footer";
 }
 
 @media (width > 600px) {
   .grid-area {
     grid-template-columns: 100px minmax(150px, 250px) minmax(250px, 50%) 100px;
-    grid-template-areas: 
+    grid-template-areas:
       "header header header header"
       "...... sidebar content ...."
       "footer footer footer footer";
@@ -178,4 +168,14 @@
 
 .footer {
   grid-area: footer;
+}
+
+/* GRID (ANOTHER) FUNCTIONS */
+
+.grid-functions {
+  display: grid;
+  /* repeat() is used when we have multiple columns that are the same width*/
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  margin-bottom: 2em;
 }
